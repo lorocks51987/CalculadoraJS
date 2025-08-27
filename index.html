@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/icon.svg" type="image/x-icon">
+
     <style>
         h1 {
             color: white;
@@ -116,14 +118,14 @@
                 bop.addEventListener("click", function () {
                     oper = this.innerHTML;
                     V1 = parseFloat(visor.value);
-                    visor.value = "";
+                    visor.value += " " + oper + " "; // mostra no visor
                 });
             }
 
             var botaoIgual = document.querySelector("#btnig");
             botaoIgual.addEventListener("click", function () {
-                V2 = parseFloat(visor.value);
-                resultado = eval(V1 + oper + V2);
+                // pegar a expressão inteira digitada
+                resultado = eval(visor.value);
                 visor.value = resultado;
             });
 
